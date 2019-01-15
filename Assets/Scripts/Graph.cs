@@ -32,8 +32,16 @@ public class Graph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0 ; i< points.Length; i++){
-            
-        }
+        for (int i = 0; i < points.Length; i++) {
+			Transform point = points[i];
+			Vector3 position = point.localPosition;
+
+            /*Equation Goes Here */
+			position.y = Mathf.Cos(Mathf.PI*(position.x + Time.time));
+
+			point.localPosition = position;
+            	
+		}
+
     }
 }
